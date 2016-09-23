@@ -1,6 +1,8 @@
 #do a chi-squared test
 
-globalEnvironment <- read.table('hapmap_CEU_r23a_chr2_ld-2', header = T);
+#1
+setwd("/Users/Avi/Documents/UCLA/Masters Year/Fall 2016/EEB 201/")
+
 
 #Part A
 #chi-squre function
@@ -57,3 +59,26 @@ plot(log_exp_pvals, log_sort_pvals, xlab = "-log(Expected P-Value)", ylab = "-lo
 
 #Part H
 abline(0, 1, h = 5, col = 2, lty = 2)
+
+#2
+
+#Part A
+getwd()
+setwd("/Users/Avi/Documents/UCLA/Masters Year/Fall 2016/EEB 201/")
+zz = read.table("pheno.sim.2014-2.txt", header=T) #storing data frame in zz
+
+#PART B
+quantile(zz$glucose_mmolperL, 0.25)
+#25% distribution below = 4.769
+
+#PART C
+quantile(zz$glucose_mmolperL, 0.75)
+#25% distribution above (75% below) = 7.355
+
+#PART D
+hist(
+  zz$glucose_mmolperL, 
+  xlab= "Glucose (mm/L)",
+  main= "Density Plot of Glucose Levels")
+abline(v=quantile(zz$glucose_mmolperL, 0.25), col= "2")
+abline(v=quantile(zz$glucose_mmolperL, 0.75), col= "4" )
