@@ -3,6 +3,7 @@
 #1
 setwd("/Users/Avi/Documents/UCLA/Masters Year/Fall 2016/EEB 201/")
 
+globalEnvironment <- read.table("hapmap_CEU_r23a_chr2_ld.txt", header = TRUE);
 
 #Part A
 #chi-squre function
